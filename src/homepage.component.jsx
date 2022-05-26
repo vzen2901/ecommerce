@@ -9,7 +9,6 @@ const HomePage = () => (
                     <h1 className="subtitle">SHOP NOW</h1>
                 </div>
             </div>
-
             <div className="menu-item">
                 <div className="content">
                     <h1 className="title">JACKETS</h1>
