@@ -12,27 +12,28 @@ const config = {
   appId: "1:314985054888:web:ef77421242b178ef32b89d",
   measurementId: "G-9PVP3GZ0EL"
 };
-//function delete user
-// export const createUserProfileDocument = async (urerAuth, additionalData) => {
-//   if(!urerAuth) return;
-//   const userRef = firestore.doc(`users/${urerAuth.uid}`);
-//   const snapShot = await userRef.get();
-//   if(!snapShot.exists){
-//     const {displayName, email} = urerAuth;
-//     const createdAt = new Date();
-//     try{
-//       await userRef.set({
-//         displayName,
-//         email,
-//         createdAt,
-//         ...additionalData
-//       })
-//     }catch(error){
-//       console.log('error creating user', error.message);
-//     }
-//   }
-//   return userRef;
-// };
+// lấy dữ liệu đăng nhập xác thực => tạo dữ liệu data
+export const createUserProfileDocument = async (urerAuth, additionalData) => {
+  if(!urerAuth) return;
+  
+  const userRef = firestore.doc(`users/${urerAuth.uid}`);
+  const snapShot = await userRef.get();
+  if(!snapShot.exists){
+    const {displayName, email} = urerAuth;
+    const createdAt = new Date();
+    try{
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+    }catch(error){
+      console.log('error creating user', error.message);
+    }
+  }
+  return userRef;
+};
 
 firebase.initializeApp(config);
 
