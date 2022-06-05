@@ -1,0 +1,6 @@
+// actions
+{
+    type: 
+    payload:
+    
+}
