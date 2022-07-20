@@ -12,3 +12,4 @@ const middlewares = [logger];
 // const store = configureStore(rootReducer, applyMiddleware(...middlewares));
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
 export default store;
+
