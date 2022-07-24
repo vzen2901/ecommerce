@@ -1,4 +1,4 @@
-import {UserActionTypes} from './user.types';
+import UserActionTypes from './user.types';
 
 //reducer is function
 //action kích hoạt -> state thiết lập trạng thái ban đầu
